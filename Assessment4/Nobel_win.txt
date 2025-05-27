@@ -1,0 +1,8 @@
+CREATE TABLE Nobel_win (
+    year INT,
+    subject VARCHAR(100),
+    winner VARCHAR(255),
+    country VARCHAR(100),
+    category VARCHAR(100)
+);
+
