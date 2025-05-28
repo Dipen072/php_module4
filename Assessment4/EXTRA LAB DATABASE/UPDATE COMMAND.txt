@@ -1,0 +1,13 @@
+Lab 3: Update the year_of_publication of a book with a specific book_id.
+
+UPDATE books
+SET year_of_publication = 2022
+WHERE book_id = 3;
+
+Lab 4: Increase the price of all books published before 2015 by 10%.  
+
+UPDATE books
+SET price = price * 1.10
+WHERE year_of_publication < 2015;
+
+

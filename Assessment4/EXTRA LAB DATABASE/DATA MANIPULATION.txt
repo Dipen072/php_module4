@@ -1,0 +1,16 @@
+Lab 4: Insert three new authors into the authors table, then update the last name of one of the authors.
+
+INSERT INTO authors (author_id, first_name, last_name, country)
+VALUES
+(1, 'Jane', 'Austen', 'United Kingdom'),
+(2, 'Mark', 'Twain', 'United States'),
+(3, 'Gabriel', 'Garcia', 'Colombia');
+
+UPDATE authors
+SET last_name = 'García Márquez'
+WHERE author_id = 3;
+
+Lab 5: Delete a book from the books table where the price is higher than $100.
+
+DELETE FROM books
+WHERE price > 100;

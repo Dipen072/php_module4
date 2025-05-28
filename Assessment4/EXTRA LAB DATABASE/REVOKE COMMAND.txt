@@ -1,0 +1,7 @@
+Lab 3: Revoke the INSERT privilege from the user librarian on the books table.
+
+REVOKE INSERT ON books FROM 'librarian';
+
+Lab 4: Revoke all permissions from user admin on the members table.
+
+REVOKE ALL PRIVILEGES ON members FROM 'admin';

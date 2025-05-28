@@ -1,0 +1,45 @@
+Lab 3: Use COMMIT after inserting multiple records into the books table, then make another insertion and perform a ROLLBACK
+
+START TRANSACTION;
+
+-- Insert multiple books
+INSERT INTO books (book_id, title, author, publisher, year_of_publication, price, genre)
+VALUES 
+(6, 'The Great Gatsby', 'F. Scott Fitzgerald', 'Scribner', 1925, 75.00, 'Classic'),
+(7, '1984', 'George Orwell', 'Secker & Warburg', 1949, 65.00, 'Dystopian');
+
+-- Commit the transaction to save the changes
+COMMIT;
+
+-- Start a new transaction
+START TRANSACTION;
+
+-- Insert another book (will be rolled back)
+INSERT INTO books (book_id, title, author, publisher, year_of_publication, price, genre)
+VALUES 
+(8, 'Temporary Book', 'Test Author', 'Test Publisher', 2020, 50.00, 'Test');
+
+-- Roll back this last insertion
+ROLLBACK;
+
+Lab 4:Lab 4: Set a SAVEPOINT before making updates to the members table, perform some updates, and then roll back to the SAVEPOINT.
+
+START TRANSACTION;
+
+-- Set a savepoint
+SAVEPOINT before_updates;
+
+-- Perform updates
+UPDATE members
+SET email = 'updated_email1@example.com'
+WHERE member_id = 1;
+
+UPDATE members
+SET email = 'updated_email2@example.com'
+WHERE member_id = 2;
+
+-- Rollback to the savepoint (undo updates)
+ROLLBACK TO SAVEPOINT before_updates;
+
+-- Commit the transaction (if needed for any other prior changes)
+COMMIT;

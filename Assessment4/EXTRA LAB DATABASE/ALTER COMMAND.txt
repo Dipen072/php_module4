@@ -1,0 +1,21 @@
+Lab 3: Add genre Column to books Table and Update Existing Records
+
+ALTER TABLE books
+ADD genre VARCHAR(50);
+
+UPDATE books
+SET genre = 'Fiction'
+WHERE book_id IN (1, 2);
+
+UPDATE books
+SET genre = 'Classic'
+WHERE book_id IN (3, 4);
+
+UPDATE books
+SET genre = 'Literary Fiction'
+WHERE book_id = 5;
+
+Lab 4: Modify email Column in members Table to 100 Characters
+
+ALTER TABLE members
+MODIFY email VARCHAR(100); 
